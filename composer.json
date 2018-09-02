@@ -1,0 +1,11 @@
+{
+    "name": "pgsavis/cms",
+    "description": "Cms for package course",
+    "authors": [
+        {
+            "name": "Sayyed Jamal Ghasemi",
+            "email": "jamal13647850@gmail.com"
+        }
+    ],
+    "require": {}
+}
