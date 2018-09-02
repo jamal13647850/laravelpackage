@@ -11,5 +11,7 @@ namespace pgsavis\cms;
 
 class Cms
 {
-
+    public function listUser(){
+        return "user";
+    }
 }
