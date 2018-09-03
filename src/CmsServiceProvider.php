@@ -16,4 +16,8 @@ class CmsServiceProvider extends ServiceProvider
             return new Cms;
         });
     }
+
+    public function boot(){
+        require (__DIR__ . '\Http\routes.php');
+    }
 }
