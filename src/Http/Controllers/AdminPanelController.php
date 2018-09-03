@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 class AdminPanelController extends Controller{
    public function index(){
-       return 'admin panel';
+       $name = 'admin panel';
+
+       return View('cms::index',compact('name'));
    }
 }

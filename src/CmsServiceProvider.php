@@ -19,5 +19,7 @@ class CmsServiceProvider extends ServiceProvider
 
     public function boot(){
         require (__DIR__ . '\Http\routes.php');
+
+        $this->loadViewsFrom(__DIR__.'/Views','cms');
     }
 }
