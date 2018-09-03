@@ -15,6 +15,8 @@ class CmsServiceProvider extends ServiceProvider
         $this->app->bind('cms',function(){
             return new Cms;
         });
+
+        $this->mergeConfigFrom(__DIR__.'/Configs/main.php','cms');
     }
 
     public function boot(){

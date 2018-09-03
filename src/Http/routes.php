@@ -7,6 +7,9 @@
  */
 
 Route::group(['namespace' => 'pgsavis\cms\Http\Controllers'],function(){
-    Route::get('adminpanel/index','AdminPanelController@index');
+    Route::get('/adminpanel/index','AdminPanelController@index');
+    Route::get('/adminpanel/config',function(){
+        return config('cms.url');
+    });
 });
 
