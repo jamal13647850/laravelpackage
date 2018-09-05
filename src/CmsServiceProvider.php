@@ -36,5 +36,9 @@ class CmsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/Views' => base_path('resources/views/cms')
         ],'views');
+
+        $this->publishes([
+            __DIR__.'/Migrations' => database_path('/migrations')
+        ],'views');
     }
 }
