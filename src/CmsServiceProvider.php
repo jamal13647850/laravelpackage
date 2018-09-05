@@ -19,7 +19,7 @@ class CmsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/Configs/main.php','cms');
     }
 
-    public function boot(){
+    public function boot(\Illuminate\Routing\Router $router){
         require (__DIR__ . '\Http\routes.php');
 
         $this->loadViewsFrom(__DIR__.'/Views','cms');
@@ -28,6 +28,8 @@ class CmsServiceProvider extends ServiceProvider
             __DIR__.'/Configs/main.php'=>config_path('cms.php'),
             __DIR__.'/Views' => base_path('resources/views/cms')
         ]);*/
+
+        $this->app['router']->middleware('admin',\pgsavis\cms\Http\Middleware\Admin::class);
 
         $this->publishes([
             __DIR__.'/Configs/main.php'=>config_path('cms.php')
@@ -40,5 +42,7 @@ class CmsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/Migrations' => database_path('/migrations')
         ],'views');
+
+
     }
 }
