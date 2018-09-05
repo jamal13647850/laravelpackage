@@ -23,5 +23,18 @@ class CmsServiceProvider extends ServiceProvider
         require (__DIR__ . '\Http\routes.php');
 
         $this->loadViewsFrom(__DIR__.'/Views','cms');
+
+        /*$this->publishes([
+            __DIR__.'/Configs/main.php'=>config_path('cms.php'),
+            __DIR__.'/Views' => base_path('resources/views/cms')
+        ]);*/
+
+        $this->publishes([
+            __DIR__.'/Configs/main.php'=>config_path('cms.php')
+        ],'config');
+
+        $this->publishes([
+            __DIR__.'/Views' => base_path('resources/views/cms')
+        ],'views');
     }
 }
